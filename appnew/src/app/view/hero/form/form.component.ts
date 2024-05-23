@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
   hero={
@@ -25,7 +25,9 @@ export class FormComponent implements OnInit {
   initForm(){
     this.formGroup=this.formB.group({
       name:["",Validators.required],
-      email:["",[Validators.required,Validators.email]]
+      email:["",[Validators.required,Validators.email]],
+      contrasena:["",Validators.required],
+      numero:["",Validators.required]
     })
   }
   submit(){
