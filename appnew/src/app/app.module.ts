@@ -9,11 +9,15 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { FormComponent } from './view/hero/form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TableComponent } from './view/hero/table/table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    FormComponent,
+    DashboardComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
