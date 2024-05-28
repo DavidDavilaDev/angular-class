@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TableComponent } from './view/hero/table/table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,10 @@ import { TableComponent } from './view/hero/table/table.component';
     MatSlideToggleModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatPaginator,
   ],
   providers: [
     provideClientHydration(),
