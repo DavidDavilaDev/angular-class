@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { UserService } from '../../../service/user.service';
+import { PeriodicElement } from '../../../model/user';
 
 @Component({
   selector: 'app-form',
@@ -8,30 +9,26 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
-  hero={
-    id:"1",
-    name:"Edgar"
-  }
-  formGroup!:FormGroup;
+  formGroup!: FormGroup;
 
-
-  constructor(private formB:FormBuilder) 
-  { }
+  constructor(private formB: FormBuilder, private userService: UserService) {}
 
   ngOnInit(): void {
     this.initForm();
   }
 
-  initForm(){
-    this.formGroup=this.formB.group({
-      name:["",Validators.required],
-      email:["",[Validators.required,Validators.email]],
-      contrasena:["",Validators.required],
-      numero:["",Validators.required]
-    })
-  }
-  submit(){
-    console.log(this.formGroup.value)
+  initForm() {
+    this.formGroup = this.formB.group({
+      position: ["", Validators.required],
+      name: ["", Validators.required],
+      weight: ["", Validators.required],
+      symbol: ["", Validators.required]
+    });
   }
 
+  submit() {
+    const newElement: PeriodicElement = this.formGroup.value;
+    this.userService.addData(newElement);
+    this.formGroup.reset();
+  }
 }

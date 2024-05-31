@@ -1,0 +1,37 @@
+/* src/app/navbar/navbar.component.scss */
+.nav-wrapper {
+    background-color: #e57373;
+    padding: 0 20px;
+  }
+  
+  .brand-logo {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+  }
+  
+  #nav-mobile {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  
+    li {
+      margin-left: 20px;
+  
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  .right {
+    margin-left: auto;
+  }
+  
+  .hide-on-med-and-down {
+    display: flex;
+  }
+  

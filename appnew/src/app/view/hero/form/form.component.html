@@ -1,31 +1,30 @@
-<div>
-    <br>
-    <br>
-    <form [formGroup]="formGroup">
-            <mat-form-field appearance="outline">
-              <mat-label>Nombre</mat-label>
-              <input matInput placeholder="Nombre" formControlName="name">
-              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-                <mat-label>Correo</mat-label>
-                <input matInput placeholder="Correo" formControlName="email">
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-              </mat-form-field>
-
-              <mat-form-field appearance="outline">
-                <mat-label>Contraseña</mat-label>
-                <input matInput placeholder="Contraseña" formControlName="contrasena">
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-              </mat-form-field>
-              
-
-              <mat-form-field hintLabel="Maximo 10 digitos">
-                <mat-label>Numero</mat-label>
-                <input matInput #input maxlength="10" placeholder="Numero" pattern="[0-9]{0,10}" formControlName="numero">
-                <mat-hint align="end">{{input.value.length}}/10</mat-hint>
-              </mat-form-field>
-        <button (click)="submit()" [disabled]="formGroup.invalid">enviar</button>
+<div class="form-container">
+    <form [formGroup]="formGroup" class="form">
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Position</mat-label>
+            <input matInput placeholder="Position" formControlName="position" type="number">
+            <mat-icon matSuffix>format_list_numbered</mat-icon>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name" formControlName="name">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Weight</mat-label>
+            <input matInput placeholder="Weight" formControlName="weight" type="number">
+            <mat-icon matSuffix>fitness_center</mat-icon>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Symbol</mat-label>
+            <input matInput placeholder="Symbol" formControlName="symbol">
+            <mat-icon matSuffix>label</mat-icon>
+        </mat-form-field>
+  
+        <button (click)="submit()" [disabled]="formGroup.invalid" class="submit-btn">Submit</button>
     </form>
-</div>
+  </div>
+  
